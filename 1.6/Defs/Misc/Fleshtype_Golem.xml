@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>	
+
+	<FleshTypeDef>
+		<defName>DV_Fleshtype_Golem</defName>
+		<corpseCategory>DV_CorpsesGolem</corpseCategory>
+		<damageEffecter>DV_Damage_HitGolem</damageEffecter>
+        <isOrganic>false</isOrganic>
+		<genericWounds>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundA</texture>
+                <color>(98, 67, 50)</color>                
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundB</texture>
+                <color>(98, 67, 50)</color>          
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundC</texture>
+                <color>(98, 67, 50)</color>          
+			</li>
+		</genericWounds>
+	</FleshTypeDef>
+
+</Defs>

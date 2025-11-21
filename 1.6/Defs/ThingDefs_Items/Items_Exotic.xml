@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Persona core ====================-->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DV_Exotic_AnimaDoll</defName>
+    <label>anima doll</label>
+    <description>An intricately engraved anima wood statuette, holding a myriad of psychic microorganisms. It is inert without a body, but it can be placed inside of a clay vessel to give it life.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimaCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Wood_Drop</soundInteract>
+    <soundDrop>Wood_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2</Mass>
+      <Flammability>0.1</Flammability>
+    </statBases>
+    <costList>
+      <DV_AnimaLog>5</DV_AnimaLog>
+    </costList>
+    <recipeMaker>
+		<workAmount>3000</workAmount>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <researchPrerequisite>DV_GolemResearch_BasicGolemancy</researchPrerequisite>
+      <displayPriority>140</displayPriority>
+      <skillRequirements>
+        <Artistic>12</Artistic>
+      </skillRequirements>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+    </recipeMaker>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Neolithic</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DV_Seed_AnimaSprout</defName>
+    <label>glowing seed</label>
+    <description>The strange seed of an anima tree. It can be studied to discover more about anima flora.</description>
+    <descriptionHyperlinks>
+      <ThingDef MayRequire="Ludeon.RimWorld.Royalty">Plant_TreeAnima</ThingDef>
+      <ThingDef>DV_Plant_AnimaSprout</ThingDef>
+    </descriptionHyperlinks>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>0.3</Mass>
+      <Beauty>0</Beauty>
+      <MarketValue>70</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Resource/Seed_AnimaSprout</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.8, 0.8)</drawSize>
+    </graphicData>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Artifact</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>27312879</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Glowing seed studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the glowing seed, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the glowing seed.</activateDescString>
+        <jobString>Analyze glowing seed</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

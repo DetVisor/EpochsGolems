@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<WorkGiverDef>
+  <defName>DV_DoBillsMakeGolems</defName>
+  <label>construct golems at a golem spot</label>
+  <giverClass>WorkGiver_DoBill</giverClass>
+  <workType>Crafting</workType>
+  <priorityInType>100</priorityInType>
+  <fixedBillGiverDefs>
+    <li>DV_GolemancySpot</li>
+  </fixedBillGiverDefs>
+  <verb>construct</verb>
+  <gerund>constructing at</gerund>
+  <requiredCapacities>
+    <li>Manipulation</li>
+  </requiredCapacities>
+  <prioritizeSustains>true</prioritizeSustains>
+</WorkGiverDef>
+<!--
+<WorkGiverDef>
+  <defName>DV_DoBillsMakeGolems_Press</defName>
+  <label>forge golems at a golem press</label>
+  <giverClass>WorkGiver_DoBill</giverClass>
+  <workType>Crafting</workType>
+  <priorityInType>100</priorityInType>
+  <fixedBillGiverDefs>
+    <li>DV_TableGolemPress</li>
+  </fixedBillGiverDefs>
+  <verb>forge</verb>
+  <gerund>forging at</gerund>
+  <requiredCapacities>
+    <li>Manipulation</li>
+  </requiredCapacities>
+  <prioritizeSustains>true</prioritizeSustains>
+</WorkGiverDef>
+-->
+</Defs>

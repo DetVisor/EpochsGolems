@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ThingDef ParentName="DV_BaseGolem">
+		<defName>DV_Golem_Plate</defName>
+		<label>plate golem</label>
+		<description>A short, stubby clay golem, rendered alive by an anima doll. It is dimwitted, but is great at menial labour.</description>
+		<statBases>
+			<MoveSpeed>3.5</MoveSpeed>
+			<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+			<PsychicSensitivity>0.10</PsychicSensitivity>
+		</statBases>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<race>
+			<body>DV_GolemBodyDef</body>
+			<baseBodySize>0.75</baseBodySize>
+			<lifeStageAges Inherit="False">
+				<li>
+                  <def>DV_Lifestage_Golem</def>
+					<minAge>0</minAge>
+                    <soundWounded>Pawn_Tortoise_Wounded</soundWounded>
+                    <soundDeath>Pawn_Tortoise_Death</soundDeath>
+                    <soundCall>Pawn_Tortoise_Call</soundCall>
+                    <soundAngry>Pawn_Tortoise_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+		</race>
+		<butcherProducts>
+			<DV_Clay>50</DV_Clay>
+			<DV_Exotic_AnimaDoll>1</DV_Exotic_AnimaDoll>
+		</butcherProducts>
+		<comps>
+			<li Class="Asimov.CompProperties_Automaton">
+				<canUseRanged>true</canUseRanged>
+				<canUseMelee>true</canUseMelee>
+				<corpseEdible>false</corpseEdible>
+				<corpseRots>false</corpseRots>
+				<immuneToDisease>true</immuneToDisease>
+				<huntTarget>false</huntTarget>
+				<clearPassions>true</clearPassions>
+				<flattenSkills>true</flattenSkills>
+				<skillGainMulti>0.2</skillGainMulti>
+				<skillLossMulti>0</skillLossMulti>
+				<defaultSkillLevel>0</defaultSkillLevel>
+				<enabledWorkTypes>
+				    <li>Firefighter</li>
+			        <li>BasicWorker</li>
+					<li>PlantCutting</li>
+					<li>Mining</li>
+					<li>Hauling</li>
+					<li>Cleaning</li>
+				</enabledWorkTypes>
+				<skillSettings>
+					<li>
+						<skill>Melee</skill>
+						<level>9</level>
+					</li>
+					<li>
+						<skill>Mining</skill>
+						<level>9</level>
+					</li>
+					<li>
+						<skill>Plants</skill>
+						<level>6</level>
+					</li>
+				</skillSettings>
+			</li>
+			<li Class="Asimov.CompProperties_RecolourablePawn">
+				<channelOne>true</channelOne>
+				<channelTwo>false</channelTwo>
+				<skinColorPairs>
+					<li>
+						<colorOne>(169, 160, 158)</colorOne>
+						<colorTwo>(154, 107, 80)</colorTwo>
+						<weight>100</weight>
+					</li>
+				</skinColorPairs>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AsimovAutomatonKindBase">
+		<defName>DV_Golem_Plate</defName>
+		<label>plate golem</label>
+		<race>DV_Golem_Plate</race>
+		<combatPower>40</combatPower>
+		<isFighter>true</isFighter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/PlateGolem/Body/PlateGolem</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.6</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+</Defs>

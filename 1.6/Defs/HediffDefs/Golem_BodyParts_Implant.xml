@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+    <!-- Base: golem body part -->
+
+    <ThingDef Name="DV_GolemBodypart_Implant" Abstract="True">
+        <graphicData>
+            <texPath>Things/Item/GolemPart</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1</drawSize>
+            <color>(255, 255, 255)</color>
+        </graphicData>
+        <thingClass>ThingWithComps</thingClass>
+        <category>Item</category>
+        <useHitPoints>true</useHitPoints>
+        <selectable>true</selectable>
+        <altitudeLayer>Item</altitudeLayer>
+        <tickerType>Never</tickerType>
+        <alwaysHaulable>true</alwaysHaulable>
+        <isTechHediff>true</isTechHediff>
+        <pathCost>14</pathCost>
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Flammability>0.2</Flammability>
+            <Beauty>0</Beauty>
+            <DeteriorationRate>1.0</DeteriorationRate>
+            <Mass>1</Mass>
+        </statBases>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <effectWorking>Repair</effectWorking>
+            <soundWorking>Recipe_Machining</soundWorking>
+            <workAmount>300</workAmount>
+            <productCount>1</productCount>
+            <workSkill>Crafting</workSkill>
+            <skillRequirements>
+                <Crafting>10</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>TableSculpting</li>
+            </recipeUsers>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+        <costList>
+            <DV_AnimaLog>40</DV_AnimaLog>
+        </costList>
+        <thingCategories>
+            <li>DV_Golem_Parts</li>
+        </thingCategories>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+        </comps>
+    </ThingDef>
+
+    <RecipeDef Name="DV_GolemBodypart_Install" Abstract="True">
+        <deathOnFailedSurgeryChance>0</deathOnFailedSurgeryChance>
+        <surgerySuccessChanceFactor>100</surgerySuccessChanceFactor>
+        <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+        <workAmount>2500</workAmount>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>16</workSkillLearnFactor>
+        <anesthetize>false</anesthetize>
+        <skillRequirements>
+            <Crafting>8</Crafting>
+        </skillRequirements>
+    </RecipeDef>
+
+    <!-- Sleep accelerator -->
+
+    <ThingDef ParentName="DV_GolemBodypart_Implant">
+        <defName>DV_Golem_SleepAccelerator</defName>
+        <label>sleep accelerator</label>
+        <description>An anima golem module that increases the rest gain of the psychic microorganisms.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>DV_Golem_InstallSleepAccelerator</RecipeDef>
+        </descriptionHyperlinks>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <Mass>1</Mass>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef>
+        <defName>DV_Golem_InstalledSleepAccelerator</defName>
+        <label>sleep accelerator</label>
+        <description>An anima golem module that increases the rest gain of the psychic microorganisms.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(171, 245, 216)</defaultLabelColor>
+        <makesSickThought>false</makesSickThought>
+        <tendable>false</tendable>
+        <priceImpact>false</priceImpact>
+        <isBad>False</isBad>
+        <spawnThingOnRemoved>DV_Golem_SleepAccelerator</spawnThingOnRemoved>
+        <stages>
+            <li>
+                <statOffsets>
+                    <RestRateMultiplier>0.35</RestRateMultiplier>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="DV_GolemBodypart_Install">
+        <defName>DV_Golem_InstallSleepAccelerator</defName>
+        <label>insert sleep accelerator</label>
+        <description>Insert a sleep accelerator.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_SleepAccelerator</ThingDef>
+        </descriptionHyperlinks>
+        <jobString>Inserting sleep accelerator.</jobString>
+        <effectWorking>ClayTurning</effectWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Golem_SleepAccelerator</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Golem_SleepAccelerator</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>Head</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>DV_Golem_InstalledSleepAccelerator</addsHediff>
+    </RecipeDef>
+
+    <!-- Attack booster -->
+
+    <ThingDef ParentName="DV_GolemBodypart_Implant">
+        <defName>DV_Golem_AttackBooster</defName>
+        <label>attack booster</label>
+        <description>An anima golem module that induces more intense aggression into the psychic microorganisms, at the cost of lowering their work drive.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>DV_Golem_InstallAttackBooster</RecipeDef>
+        </descriptionHyperlinks>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <Mass>1</Mass>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef>
+        <defName>DV_Golem_InstalledAttackBooster</defName>
+        <label>attack booster</label>
+        <description>An anima golem module that induces more intense aggression into the psychic microorganisms, at the cost of lowering their work drive.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(171, 245, 216)</defaultLabelColor>
+        <makesSickThought>false</makesSickThought>
+        <tendable>false</tendable>
+        <priceImpact>false</priceImpact>
+        <isBad>False</isBad>
+        <spawnThingOnRemoved>DV_Golem_AttackBooster</spawnThingOnRemoved>
+        <stages>
+            <li>
+                <statFactors>
+                    <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+                </statFactors>
+                <statOffsets>
+                    <MeleeCooldownFactor>-0.1</MeleeCooldownFactor>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="DV_GolemBodypart_Install">
+        <defName>DV_Golem_InstallAttackBooster</defName>
+        <label>insert attack booster</label>
+        <description>Insert an attack booster.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_AttackBooster</ThingDef>
+        </descriptionHyperlinks>
+        <jobString>Inserting attack booster.</jobString>
+        <effectWorking>ClayTurning</effectWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Golem_AttackBooster</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Golem_AttackBooster</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>Head</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>DV_Golem_InstalledAttackBooster</addsHediff>
+    </RecipeDef>
+
+    <!-- Speed enhancer -->
+
+    <ThingDef ParentName="DV_GolemBodypart_Implant">
+        <defName>DV_Golem_SpeedEnhancer</defName>
+        <label>speed enhancer</label>
+        <description>An anima golem module that helps with the coordination of the microorganisms, increasing the golem's speed.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>DV_Golem_InstallSleepAccelerator</RecipeDef>
+        </descriptionHyperlinks>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <Mass>1</Mass>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef>
+        <defName>DV_Golem_InstalledSpeedEnhancer</defName>
+        <label>speed enhancer</label>
+        <description>An anima golem module that helps with the coordination of the microorganisms, increasing the golem's speed.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(171, 245, 216)</defaultLabelColor>
+        <makesSickThought>false</makesSickThought>
+        <tendable>false</tendable>
+        <priceImpact>false</priceImpact>
+        <isBad>False</isBad>
+        <spawnThingOnRemoved>DV_Golem_SleepAccelerator</spawnThingOnRemoved>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MoveSpeed>0.20</MoveSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="DV_GolemBodypart_Install">
+        <defName>DV_Golem_InstallSpeedEnhancer</defName>
+        <label>insert speed enhancer</label>
+        <description>Insert a speed enhancer.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_SpeedEnhancer</ThingDef>
+        </descriptionHyperlinks>
+        <jobString>Inserting speed enhancer.</jobString>
+        <effectWorking>ClayTurning</effectWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Golem_SpeedEnhancer</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Golem_SpeedEnhancer</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>Waist</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>DV_Golem_InstalledSpeedEnhancer</addsHediff>
+    </RecipeDef>
+
+    <!-- Brain module -->
+
+    <ThingDef ParentName="DV_GolemBodypart_Implant">
+        <defName>DV_Golem_BrainModule</defName>
+        <label>brain module</label>
+        <description>An anima golem module that increases the manipulative ability of golems, at the cost of a lowered locomotor coordination.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>DV_Golem_InstallBrainModule</RecipeDef>
+        </descriptionHyperlinks>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <Mass>1</Mass>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef>
+        <defName>DV_Golem_InstalledBrainModule</defName>
+        <label>brain module</label>
+        <description>An anima golem module that increases the manipulative ability of golems, at the cost of a lowered locomotor coordination.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(171, 245, 216)</defaultLabelColor>
+        <makesSickThought>false</makesSickThought>
+        <tendable>false</tendable>
+        <priceImpact>false</priceImpact>
+        <isBad>False</isBad>
+        <spawnThingOnRemoved>DV_Golem_BrainModule</spawnThingOnRemoved>
+        <stages>
+            <li>
+                <statFactors>
+                    <WorkSpeedGlobal>1.1</WorkSpeedGlobal>
+                </statFactors>
+                <statOffsets>
+                    <MoveSpeed>-0.10</MoveSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="DV_GolemBodypart_Install">
+        <defName>DV_Golem_InstallBrainModule</defName>
+        <label>insert brain module</label>
+        <description>Insert a brain module.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_BrainModule</ThingDef>
+        </descriptionHyperlinks>
+        <jobString>Inserting brain module.</jobString>
+        <effectWorking>ClayTurning</effectWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Golem_BrainModule</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Golem_BrainModule</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>DV_Golem_ClayBrain</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>DV_Golem_InstalledBrainModule</addsHediff>
+    </RecipeDef>
+
+
+    <!-- Anima claw  -->
+
+    <ThingDef ParentName="DV_GolemBodypart_Implant">
+        <defName>DV_Golem_AnimaClaw</defName>
+        <label>anima claw</label>
+        <description>An arm carved out of anima logs, with sharp clawed fingers. Increases damage, but lowers manipulation.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>DV_Golem_InstallAnimaClaw</RecipeDef>
+        </descriptionHyperlinks>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <Mass>1</Mass>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef>
+        <defName>DV_Golem_InstalledAnimaClaw</defName>
+        <label>anima claw</label>
+        <description>An arm carved out of anima logs, with sharp clawed fingers. Increases damage, but lowers manipulation.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(171, 245, 216)</defaultLabelColor>
+        <makesSickThought>false</makesSickThought>
+        <tendable>false</tendable>
+        <priceImpact>false</priceImpact>
+        <isBad>False</isBad>
+        <spawnThingOnRemoved>DV_Golem_AnimaClaw</spawnThingOnRemoved>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>anima claw</label>
+                        <capacities>
+                            <li>Cut</li>
+                            <li>Poke</li>
+                            <li>Scratch</li>
+                        </capacities>
+                        <armorPenetration>0.2</armorPenetration>
+                        <power>10</power>
+                        <cooldownTime>2.2</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+    </HediffDef>
+    
+    <RecipeDef ParentName="DV_GolemBodypart_Install">
+        <defName>DV_Golem_InstallAnimaClaw</defName>
+        <label>attach anima claw</label>
+        <description>Attach an anima claw.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_AnimaClaw</ThingDef>
+        </descriptionHyperlinks>
+        <jobString>Attaching anima claw.</jobString>
+        <effectWorking>ClayTurning</effectWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Golem_AnimaClaw</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Golem_AnimaClaw</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>DV_Golem_Arm</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>DV_Golem_InstalledAnimaClaw</addsHediff>
+    </RecipeDef>
+
+
+    <!-- Brick fist  -->
+
+    <ThingDef ParentName="DV_GolemBodypart_Implant">
+        <defName>DV_Golem_BrickFist</defName>
+        <label>brick fist</label>
+        <description>An arm composed of anima branches holding a hardened clay brick. Increases damage by a lot, but drastically lowers manipulation.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>DV_Golem_InstallBrickFist</RecipeDef>
+        </descriptionHyperlinks>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <Mass>1</Mass>
+        </statBases>
+        <costList>
+            <DV_AnimaLog>40</DV_AnimaLog>
+            <DV_Clay>25</DV_Clay>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef>
+        <defName>DV_Golem_InstalledBrickFist</defName>
+        <label>brick fist</label>
+        <description>An arm composed of anima branches holding a hardened clay brick. Increases damage by a lot, but drastically lowers manipulation.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(171, 245, 216)</defaultLabelColor>
+        <makesSickThought>false</makesSickThought>
+        <tendable>false</tendable>
+        <priceImpact>false</priceImpact>
+        <isBad>False</isBad>
+        <spawnThingOnRemoved>DV_Golem_BrickFist</spawnThingOnRemoved>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.18</offset>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <MoveSpeed>-0.07</MoveSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>brick fist</label>
+                        <capacities>
+                         <li>Blunt</li>
+                        </capacities>
+                        <armorPenetration>0.2</armorPenetration>
+                        <power>15</power>
+                        <cooldownTime>2.3</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <RecipeDef ParentName="DV_GolemBodypart_Install">
+        <defName>DV_Golem_InstallBrickFist</defName>
+        <label>attach brick fist</label>
+        <description>Attach a brick fist.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_BrickFist</ThingDef>
+        </descriptionHyperlinks>
+        <jobString>Attaching brick fist.</jobString>
+        <effectWorking>ClayTurning</effectWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Golem_BrickFist</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Golem_BrickFist</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>DV_Golem_Arm</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>DV_Golem_InstalledBrickFist</addsHediff>
+    </RecipeDef>
+
+    <!-- Pyrinth compat-->
+
+    <!-- Pyrinth talon  -->
+
+    <ThingDef MayRequire="det.epochspyrinth" ParentName="DV_GolemBodypart_Implant">
+        <defName>DV_Golem_PyrinthTalon</defName>
+        <label>pyrinth talon</label>
+        <description>An arm made of pyrinth shards locked between anima branches. Increases damage, and adds a chance of setting targets on fire, at the cost of manipulation.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>DV_Golem_InstallPyrinthTalon</RecipeDef>
+        </descriptionHyperlinks>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <Mass>1</Mass>
+        </statBases>
+        <costList>
+            <DV_AnimaLog>40</DV_AnimaLog>
+            <DV_Pyrinth>25</DV_Pyrinth>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyModules</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef MayRequire="det.epochspyrinth">
+        <defName>DV_Golem_InstalledPyrinthTalon</defName>
+        <label>pyrinth talon</label>
+        <description>An arm made of pyrinth shards locked between anima branches. Increases damage, and adds a chance of setting targets on fire, at the cost of manipulation.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(171, 245, 216)</defaultLabelColor>
+        <makesSickThought>false</makesSickThought>
+        <tendable>false</tendable>
+        <priceImpact>false</priceImpact>
+        <isBad>False</isBad>
+        <spawnThingOnRemoved>DV_Golem_PyrinthTalon</spawnThingOnRemoved>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.08</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>pyrinth talon</label>
+                        <capacities>
+                            <li>Cut</li>
+                            <li>Scratch</li>
+                        </capacities>
+                        <armorPenetration>0.1</armorPenetration>
+                        <power>12</power>
+                        <cooldownTime>2.4</cooldownTime>
+                        <extraMeleeDamages>
+                            <li>
+                                <def>Flame</def>
+                                <amount>6</amount>
+                                <chance>0.5</chance>
+                            </li>
+                        </extraMeleeDamages>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <RecipeDef MayRequire="det.epochspyrinth" ParentName="DV_GolemBodypart_Install">
+        <defName>DV_Golem_InstallPyrinthTalon</defName>
+        <label>attach pyrinth talon</label>
+        <description>Attach a pyrinth talon.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_PyrinthTalon</ThingDef>
+        </descriptionHyperlinks>
+        <jobString>Attaching pyrinth talon.</jobString>
+        <effectWorking>ClayTurning</effectWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Golem_PyrinthTalon</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Golem_PyrinthTalon</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>DV_Golem_Arm</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>DV_Golem_InstalledPyrinthTalon</addsHediff>
+    </RecipeDef>
+
+
+</Defs>

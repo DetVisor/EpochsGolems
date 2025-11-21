@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<BackstoryDef>
+		<defName>DV_AutomatroidBackstoryChild</defName>
+		<title>crafted automaton</title>
+		<titleShort>automaton</titleShort>
+		<description>A simplitic neo-spacer robot design, forged by the stoneborn.</description>
+		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<spawnCategories>
+			<li>DV_AutomatroidBackstory_Category</li>
+		</spawnCategories>
+	</BackstoryDef>
+	<BackstoryDef>
+
+		<defName>DV_AutomatroidBackstoryAdult</defName>
+		<title>automaton</title>
+		<titleShort>automaton</titleShort>
+		<description>A simplitic neo-spacer robot design, forged by the stoneborn.</description>
+		<slot>Adulthood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<spawnCategories>
+			<li>DV_AutomatroidBackstory_Category</li>
+		</spawnCategories>
+	</BackstoryDef>
+
+</Defs>

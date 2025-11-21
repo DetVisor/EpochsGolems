@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingCategoryDef>
+    <defName>DV_CorpsesGolem</defName>
+    <label>golem corpses</label>
+    <parent>Corpses</parent>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>DV_Golem_Parts</defName>
+    <label>golem</label>
+    <parent>BodyParts</parent>
+  </ThingCategoryDef>
+</Defs>

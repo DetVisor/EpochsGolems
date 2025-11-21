@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>DV_UnfinishedGolem</defName>
+    <label>unfinished golem</label>
+    <description>An unfinished golem.</description>
+    <graphicData>
+      <color>(154, 107, 80)</color>
+      <texPath>Things/Item/Unfinished/UnfinishedGolem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>DV_UnfinishedPlateGolem</defName>
+    <label>unfinished plate golem</label>
+    <description>An unfinished plate golem.</description>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedPlateGolem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+
+</Defs>

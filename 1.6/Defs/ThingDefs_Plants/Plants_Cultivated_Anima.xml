@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="TreeBase">
+        <defName>DV_Plant_AnimaSprout</defName>
+        <label>anima bloom</label>
+        <description>A small, inert anima sprout. It attracts the same psychically active microorganisms as proper anima trees, but doesn't have the necessary connection to an archotech to be linked with.</description>
+        <graphicData>
+            <texPath>Things/Plant/AnimaBloom</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shadowData>
+                <volume>(0.12, 0.12, 0.12)</volume>
+                <offset>(0,0,0)</offset>
+            </shadowData>
+        </graphicData>
+        <selectable>true</selectable>
+        <statBases>
+            <Beauty>2</Beauty>
+            <BeautyOutdoors>2</BeautyOutdoors>
+            <Nutrition>0.5</Nutrition>
+        </statBases>
+        <minifiedDef IsNull="True" />
+        <ingestible />
+        <plant>
+            <topWindExposure>0.15</topWindExposure>
+            <mustBeWildToSow>false</mustBeWildToSow>
+            <harvestWork>310</harvestWork>
+            <harvestTag>Standard</harvestTag>
+            <forceIsTree>false</forceIsTree>
+            <growDays>15</growDays>
+            <visualSizeRange>1.4~1.8</visualSizeRange>
+            <sowMinSkill>0</sowMinSkill>
+            <sowTags>
+                <li>Ground</li>
+                <li>Decorative</li>
+            </sowTags>
+            <dieIfNoSunlight>true</dieIfNoSunlight>
+            <dieFromToxicFallout>False</dieFromToxicFallout>
+            <fertilityMin>0.02</fertilityMin>
+            <fertilitySensitivity>0</fertilitySensitivity>
+            <neverBlightable>true</neverBlightable>
+            <sowResearchPrerequisites Inherit="False">
+                <li>DV_GolemResearch_AnimaBlooms</li>
+            </sowResearchPrerequisites>
+            <harvestYield>15</harvestYield>
+            <allowAutoCut>true</allowAutoCut>
+            <warnIfMarkedForCut>false</warnIfMarkedForCut>
+            <harvestedThingDef>DV_AnimaLog</harvestedThingDef>
+            <harvestFailable>false</harvestFailable>
+            <immatureGraphicPath>Things/Plant/AnimaBloom_Immature</immatureGraphicPath>
+            <treeLoversCareIfChopped>false</treeLoversCareIfChopped>
+            <burnedThingDef IsNull="True" />
+            <choppedThingDef IsNull="True" />
+            <smashedThingDef IsNull="True" />
+        </plant>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>2</glowRadius>
+                <glowColor>(110,116,125)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

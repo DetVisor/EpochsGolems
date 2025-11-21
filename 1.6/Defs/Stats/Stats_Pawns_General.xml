@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>DV_GolemFormingSpeed</defName>
+    <label>golem forming speed</label>
+    <description>A multiplier on the speed at which this person can build new golems.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0.1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <category>PawnWork</category>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnMechanoids>false</showOnMechanoids>
+    <displayPriorityInCategory>2000</displayPriorityInCategory>
+    <showIfUndefined>true</showIfUndefined>
+    <skillNeedFactors>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Crafting</skill>
+        <baseValue>0.80</baseValue>
+        <bonusPerLevel>0.025</bonusPerLevel>
+      </li>
+    </skillNeedFactors>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>1</weight>
+      </li>
+      <li>
+        <capacity>Sight</capacity>
+        <weight>0.8</weight>
+        <max>1</max>
+      </li>
+    </capacityFactors>
+  </StatDef>
+
+</Defs>

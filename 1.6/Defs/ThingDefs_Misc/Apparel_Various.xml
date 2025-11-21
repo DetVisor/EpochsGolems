@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>DV_Apparel_GolemancerBag</defName>
+        <label>golemancer bag</label>
+        <description>A simple bag decorated with anima wood. Made for storing clay-carving tools and components used in forming golems.</description>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/GolemancerBag/GolemancerBag</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>0.8</drawSize>
+        </graphicData>
+        <techLevel>Medieval</techLevel>
+        <costList>
+            <DV_AnimaLog>15</DV_AnimaLog>
+        </costList>
+        <costStuffCount>50</costStuffCount>
+        <stuffCategories>
+            <li>Fabric</li>
+            <li>Leathery</li>
+        </stuffCategories>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <WorkToMake>3500</WorkToMake>
+            <Mass>1.5</Mass>
+            <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <DV_GolemFormingSpeed>1.15</DV_GolemFormingSpeed>
+        </equippedStatOffsets>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyGear</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+            </skillRequirements>
+            <displayPriority>255</displayPriority>
+        </recipeMaker>
+        <thingCategories>
+            <li>ApparelMisc</li>
+        </thingCategories>
+        <apparel>
+            <bodyPartGroups>
+                <li>Waist</li>
+            </bodyPartGroups>
+            <countsAsClothingForNudity>false</countsAsClothingForNudity>
+            <wornGraphicPath>Things/Pawn/Humanlike/Apparel/GolemancerBag/GolemancerBag</wornGraphicPath>
+            <useWornGraphicMask>true</useWornGraphicMask>
+            <layers>
+                <li>DV_ShellAttachment</li>
+            </layers>
+            <defaultOutfitTags>
+                <li>Worker</li>
+                <li>Soldier</li>
+                <li>Nudist</li>
+                <li>Spacefarer</li>
+            </defaultOutfitTags>
+            <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+        </apparel>
+        <tradeTags>
+            <li>Armor</li>
+        </tradeTags>
+    </ThingDef>
+
+</Defs>

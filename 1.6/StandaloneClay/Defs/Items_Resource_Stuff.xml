@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Pure stuffs: Basics ====================-->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DV_Clay</defName>
+    <label>clay</label>
+    <description>A fine, stiff earth which can be moulded and shaped into various forms. Human ancestors discovered the useful properties of clay many years ago, and since then it is still widely used across the galaxy for decorative and religious purposes, by both wealthy nobles and neolithic tribes.\n\n&lt;color=#6e6e6eff&gt;If you're seeing this, it means this clay was specifically added by Epochs - Golems. If you can't craft pots or walls, this is why.&lt;/color&gt;</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Clay</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <statBases>
+      <MarketValue>1.2</MarketValue>
+      <Mass>0.4</Mass>
+    </statBases>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <deepCommonality>1</deepCommonality>
+    <deepCountPerPortion>45</deepCountPerPortion>
+    <deepLumpSizeRange>8~12</deepLumpSizeRange>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>false</smeltable>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
+  </ThingDef>
+
+</Defs>

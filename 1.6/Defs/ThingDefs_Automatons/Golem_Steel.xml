@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ThingDef ParentName="DV_BaseGolem">
+		<defName>DV_Golem_Steel</defName>
+		<label>steel golem</label>
+		<description>A human sized clay golem with steel armouring, rendered alive by an anima doll. It is fast and can hold both melee and ranged weapons. It is also capable of hunting.</description>
+		<statBases>
+			<MoveSpeed>3.2</MoveSpeed>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+			<PsychicSensitivity>0.25</PsychicSensitivity>
+		</statBases>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<race>
+			<body>DV_GolemBodyDef</body>
+			<baseBodySize>0.75</baseBodySize>
+			<lifeStageAges Inherit="False">
+				<li>
+                  <def>DV_Lifestage_Golem</def>
+					<minAge>0</minAge>
+                    <soundWounded>Pawn_Tortoise_Wounded</soundWounded>
+                    <soundDeath>Pawn_Tortoise_Death</soundDeath>
+                    <soundCall>Pawn_Tortoise_Call</soundCall>
+                    <soundAngry>Pawn_Tortoise_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+		</race>
+		<recipes>
+			<li>DV_Golem_InstallAttackBooster</li>
+		</recipes>
+		<butcherProducts>
+			<DV_Clay>50</DV_Clay>
+			<Steel>30</Steel>
+			<DV_Exotic_AnimaDoll>1</DV_Exotic_AnimaDoll>
+		</butcherProducts>
+		<comps>
+			<li Class="Asimov.CompProperties_Automaton">
+				<canUseRanged>true</canUseRanged>
+				<canUseMelee>true</canUseMelee>
+				<corpseEdible>false</corpseEdible>
+				<corpseRots>false</corpseRots>
+				<immuneToDisease>true</immuneToDisease>
+				<huntTarget>true</huntTarget>
+				<clearPassions>true</clearPassions>
+				<flattenSkills>true</flattenSkills>
+				<skillGainMulti>0.2</skillGainMulti>
+				<skillLossMulti>0</skillLossMulti>
+				<defaultSkillLevel>0</defaultSkillLevel>
+				<enabledWorkTypes>
+				    <li>Firefighter</li>
+			        <li>BasicWorker</li>
+					<li>Hauling</li>
+					<li>Cleaning</li>
+					<li>Hunting</li>
+				</enabledWorkTypes>
+				<skillSettings>
+					<li>
+						<skill>Melee</skill>
+						<level>12</level>
+					</li>
+					<li>
+						<skill>Shooting</skill>
+						<level>12</level>
+					</li>
+				</skillSettings>
+			</li>
+			<li Class="Asimov.CompProperties_RecolourablePawn">
+				<channelOne>true</channelOne>
+				<channelTwo>true</channelTwo>
+				<skinColorPairs>
+					<li>
+						<colorOne>(154, 107, 80)</colorOne>
+						<colorTwo>(169, 160, 158)</colorTwo>
+						<weight>100</weight>
+					</li>
+				</skinColorPairs>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AsimovAutomatonKindBase">
+		<defName>DV_Golem_Steel</defName>
+		<label>steel golem</label>
+		<race>DV_Golem_Steel</race>
+		<combatPower>80</combatPower>
+		<isFighter>true</isFighter>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SteelGolem/Body/SteelGolem</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.8</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+</Defs>

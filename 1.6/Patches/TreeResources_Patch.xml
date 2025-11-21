@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Royalty</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+
+            <operations>
+
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName = "Plant_TreeAnima"]/plant</xpath>
+                    <value>
+                        <plant>
+                            <growDays>25</growDays>
+                            <visualSizeRange>1.8~2.5</visualSizeRange>
+                            <sowMinSkill>0</sowMinSkill>
+                            <sowTags Inherit="False"/>
+                            <dieIfNoSunlight>False</dieIfNoSunlight>
+                            <dieFromToxicFallout>False</dieFromToxicFallout>
+                            <lifespanDaysPerGrowDays>0</lifespanDaysPerGrowDays>
+                            <fertilityMin>0.02</fertilityMin>
+                            <fertilitySensitivity>0</fertilitySensitivity>
+                            <sowResearchPrerequisites Inherit="False" />
+                            <treeCategory>Super</treeCategory>
+                            <allowAutoCut>false</allowAutoCut>
+                            <warnIfMarkedForCut>true</warnIfMarkedForCut>
+                            <choppedThingDef>ChoppedStump_Anima</choppedThingDef>
+                            <smashedThingDef>SmashedStump_Anima</smashedThingDef>
+                            <immatureGraphicPath>Things/Plant/TreeAnima_Immature</immatureGraphicPath>
+                            <harvestedThingDef>DV_AnimaLog</harvestedThingDef>
+                            <harvestYield>30</harvestYield>
+                        </plant>
+                    </value>
+                </li>
+
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName = "Plant_TreeAnima"]</xpath>
+                    <value>
+                        <killedLeavings>
+                            <DV_Seed_AnimaSprout>1</DV_Seed_AnimaSprout>
+                        </killedLeavings>
+                    </value>
+                </li>
+
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName = "Plant_TreeAnima"]/comps</xpath>
+                    <value>
+                        <li Class="CompProperties_LeavingsLetter">
+                            <letterLabel>Available: {LEAVINGS1_label}</letterLabel>
+                            <letterText>A {LEAVINGS1_label} has been dropped from the cut anima tree. It can be studied at a research bench.\n\nSelect a colonist and right-click it to study it.</letterText>
+                            <letterDef>PositiveEvent</letterDef>
+                            <leavingsFilter>
+                                <thingDefs>
+                                    <li>DV_Seed_AnimaSprout</li>
+                                </thingDefs>
+                            </leavingsFilter>
+                        </li>
+                    </value>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+</Patch>

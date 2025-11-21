@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>DV_Apparel_GolemancerGoggles</defName>
+        <label>golemancer goggles</label>
+        <description>A set of wooden carved goggles made out of anima logs. Protects the wearer's eyes from splashes of clay.</description>
+        <techLevel>Medieval</techLevel>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/GolemancerGoggles/GolemancerGoggles</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+        <costList>
+            <DV_AnimaLog>15</DV_AnimaLog>
+        </costList>
+        <costStuffCount>20</costStuffCount>
+        <stuffCategories>
+         <li>Leathery</li>
+         <li>Fabric</li>
+        </stuffCategories>
+        <recipeMaker>
+            <researchPrerequisite>DV_GolemResearch_GolemancyGear</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>5</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <statBases>
+            <WorkToMake>2100</WorkToMake>
+            <MaxHitPoints>60</MaxHitPoints>
+            <Mass>0.08</Mass>
+            <EquipDelay>2</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <DV_GolemFormingSpeed>1.15</DV_GolemFormingSpeed>
+        </equippedStatOffsets>
+        <apparel>
+            <wornGraphicPath>Things/Pawn/Humanlike/Apparel/GolemancerGoggles/GolemancerGoggles</wornGraphicPath>
+            <useWornGraphicMask>true</useWornGraphicMask>
+            <renderSkipFlags>
+                <li>None</li>
+            </renderSkipFlags>
+            <drawData>
+                <dataNorth>
+                    <layer>-3</layer>
+                </dataNorth>
+            </drawData>
+            <countsAsClothingForNudity>false</countsAsClothingForNudity>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <scoreOffset>4</scoreOffset>
+        </apparel>
+    </ThingDef>
+
+</Defs>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ResearchProjectDef>
+    <defName>DV_GolemResearch_AnimaBlooms</defName>
+    <label>anima blooms</label>
+    <description>Study the arts of planting anima blooms: small, weak forms of anima trees which can be harvested for more anima logs.</description>
+    <baseCost>500</baseCost>
+    <researchViewX>0.50</researchViewX>
+    <researchViewY>2.10</researchViewY>
+    <heldByFactionCategoryTags Inherit="False" />
+    <requiredAnalyzed>
+      <li>DV_Seed_AnimaSprout</li>
+    </requiredAnalyzed>
+    <techLevel>Neolithic</techLevel>
+    <tab>DV_EpochsTab</tab>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>DV_GolemResearch_BasicGolemancy</defName>
+    <label>beginner golemancy</label>
+    <description>Assemble clay golems and give them life using an anima doll. Note that a pawn with high artistic skill is needed to carve anima dolls.</description>
+    <baseCost>1200</baseCost>
+    <researchViewX>1.50</researchViewX>
+    <researchViewY>2.10</researchViewY>
+    <heldByFactionCategoryTags Inherit="False" />
+    <prerequisites>
+      <li>DV_GolemResearch_AnimaBlooms</li>
+    </prerequisites>
+    <techLevel>Medieval</techLevel>
+    <tab>DV_EpochsTab</tab>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>DV_GolemResearch_GolemancyGear</defName>
+    <label>golemancer gear</label>
+    <description>Craft specialized gear for your golemancers out of anima wood, and linkables to speed up golem forming.</description>
+    <baseCost>2000</baseCost>
+    <researchViewX>2.50</researchViewX>
+    <researchViewY>2.10</researchViewY>
+    <heldByFactionCategoryTags Inherit="False" />
+    <prerequisites>
+      <li>DV_GolemResearch_BasicGolemancy</li>
+    </prerequisites>
+    <techLevel>Medieval</techLevel>
+    <tab>DV_EpochsTab</tab>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>DV_GolemResearch_AdvancedGolemancy</defName>
+    <label>advanced golemancy</label>
+    <description>Assemble more advanced golems capable of proper labor, like the hay or jade golem.</description>
+    <baseCost>2000</baseCost>
+    <researchViewX>2.50</researchViewX>
+    <researchViewY>1.50</researchViewY>
+    <heldByFactionCategoryTags Inherit="False" />
+    <prerequisites>
+      <li>DV_GolemResearch_BasicGolemancy</li>
+    </prerequisites>
+    <techLevel>Medieval</techLevel>
+    <tab>DV_EpochsTab</tab>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>DV_GolemResearch_GolemancyModules</defName>
+    <label>golem modules</label>
+    <description>Enhance golems with new anima parts to make them better.</description>
+    <baseCost>2000</baseCost>
+    <researchViewX>2.50</researchViewX>
+    <researchViewY>2.70</researchViewY>
+    <heldByFactionCategoryTags Inherit="False" />
+    <prerequisites>
+      <li>DV_GolemResearch_BasicGolemancy</li>
+    </prerequisites>
+    <techLevel>Medieval</techLevel>
+    <tab>DV_EpochsTab</tab>
+  </ResearchProjectDef>
+
+
+  <!--
+  <ResearchProjectDef>
+    <defName>DV_GolemResearch_GolemMetallurgy</defName>
+    <label>golem metallurgy</label>
+    <description>Assemble more advanced golems capable of proper labor, like the hay or jade golem.</description>
+    <baseCost>2000</baseCost>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <heldByFactionCategoryTags Inherit="False" />
+    <prerequisites>
+      <li>DV_GolemResearch_AdvancedGolemancy</li>
+    </prerequisites>
+    <techLevel>Industrial</techLevel>
+  </ResearchProjectDef>
+-->
+
+</Defs>
+

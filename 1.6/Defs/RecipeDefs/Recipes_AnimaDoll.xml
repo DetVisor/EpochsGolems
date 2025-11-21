@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--
+    <RecipeDef>
+		<defName>DV_Carve_AnimaDoll</defName>
+		<label>carve anima doll</label>
+		<description>Carve an anima doll.</description>
+		<jobString>Carving an anima doll.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+		<workAmount>1500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>DV_AnimaLog</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>DV_AnimaLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>TableSculpting</li>
+		</recipeUsers>
+		<products>
+			<DV_Exotic_AnimaDoll>1</DV_Exotic_AnimaDoll>
+		</products>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
+		<workSkill>Artistic</workSkill>
+	</RecipeDef>
+-->
+</Defs>

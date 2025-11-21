@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ThingDef ParentName="AsimovNonEnergyAutomatonBase" Name="DV_BaseGolem" Abstract="True">
+		<statBases>
+			<MoveSpeed>3</MoveSpeed>
+			<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+			<PsychicSensitivity>0.5</PsychicSensitivity>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<ToxicResistance>1</ToxicResistance>
+			<DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+			<HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+		</statBases>
+		<killedLeavingsRanges>
+			<DV_Clay>30~60</DV_Clay>
+			<DV_Exotic_AnimaDoll>1~1</DV_Exotic_AnimaDoll>
+		</killedLeavingsRanges>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<race>
+			<deathAction Class="DeathActionProperties_Vanish">
+				<workerClass>DeathActionWorker_Vanish</workerClass>
+				<filth>DV_Filth_Mud</filth>
+				<filthCountRange>1~3</filthCountRange>
+				<meatExplosionSize>Small</meatExplosionSize>
+			</deathAction>
+			<fleshType>DV_Fleshtype_Golem</fleshType>
+			<hasGenders>false</hasGenders>
+			<foodType>None</foodType>
+			<lifeExpectancy>5000</lifeExpectancy>
+			<bloodDef>Filth_Dirt</bloodDef>
+			<renderTree>Asimov_AutomatonAnimal</renderTree>
+			<soundCallIntervalRange>3000~20000</soundCallIntervalRange>
+			<soundMeleeHitPawn>ChunkRock_Drop</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<recipes Inherit="False">
+			<li>DV_Golem_InstallSleepAccelerator</li>
+			<li>DV_Golem_InstallSpeedEnhancer</li>
+			<li>DV_Golem_InstallBrainModule</li>
+			<li MayRequire="det.epochspyrinth">DV_Golem_InstallPyrinthTalon</li>
+			<li>DV_Golem_InstallAnimaClaw</li>
+			<li>DV_Golem_InstallBrickFist</li>
+
+			<li>DV_Golem_Shutdown</li>
+			<li>RemoveBodyPart</li>
+		</recipes>
+		<!-- Butcher Products should be set to 1/4th the costs -->
+		<butcherProducts>
+			<DV_Clay>5</DV_Clay>
+		</butcherProducts>
+	</ThingDef>
+
+</Defs>

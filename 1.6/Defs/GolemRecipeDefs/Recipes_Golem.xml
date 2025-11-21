@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef>
+        <defName>DV_Golem_ClayBase</defName>
+        <label>golem</label>
+        <description>Construct a basic clay golem.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Clay</ThingDef>
+        </descriptionHyperlinks>
+        <thingClass>Building</thingClass>
+        <graphicData>
+            <texPath>UI/GolemIcons/UI_ClayGolem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>600</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <comps>
+            <li Class="TabulaRasa.CompProperties_PawnSpawner">
+                <pawnKind>DV_Golem_Clay</pawnKind>
+                <newborn>true</newborn>
+            </li>
+        </comps>
+        <size>(1,1)</size>
+        <category>Building</category>
+        <pathCost>200</pathCost>
+        <passability>Standable</passability>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <hasInteractionCell>false</hasInteractionCell>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <repairEffect>Repair</repairEffect>
+        <useHitPoints>True</useHitPoints>
+        <selectable>true</selectable>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <RecipeDef>
+        <defName>DV_Construct_ClayGolem</defName>
+        <label>construct clay golem</label>
+        <description>Mould a clay golem.</description>
+        <jobString>Moulding clay golem.</jobString>
+        <workSpeedStat>DV_GolemFormingSpeed</workSpeedStat>
+        <effectWorking>ClayTurning</effectWorking>
+        <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+        <workAmount>1500</workAmount>
+        <unfinishedThingDef>DV_UnfinishedGolem</unfinishedThingDef>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Clay</ThingDef>
+        </descriptionHyperlinks>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Clay</li>
+                    </thingDefs>
+                </filter>
+                <count>75</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Exotic_AnimaDoll</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Clay</li>
+                <li>DV_Exotic_AnimaDoll</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>DV_GolemancySpot</li>
+        </recipeUsers>
+        <products>
+            <DV_Golem_ClayBase>1</DV_Golem_ClayBase>
+        </products>
+        <skillRequirements>
+            <Crafting>6</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>DV_GolemResearch_BasicGolemancy</researchPrerequisite>
+    </RecipeDef>
+
+
+    <ThingDef>
+        <defName>DV_Golem_ChunkBase</defName>
+        <label>chunk golem</label>
+        <description>Construct a chunk golem.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Chunk</ThingDef>
+        </descriptionHyperlinks>
+        <thingClass>Building</thingClass>
+        <graphicData>
+            <texPath>UI/GolemIcons/UI_ChunkGolem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>955</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <comps>
+            <li Class="TabulaRasa.CompProperties_PawnSpawner">
+                <pawnKind>DV_Golem_Chunk</pawnKind>
+                <newborn>true</newborn>
+            </li>
+        </comps>
+        <size>(1,1)</size>
+        <category>Building</category>
+        <pathCost>200</pathCost>
+        <passability>Standable</passability>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <hasInteractionCell>false</hasInteractionCell>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <repairEffect>Repair</repairEffect>
+        <useHitPoints>True</useHitPoints>
+        <selectable>true</selectable>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <RecipeDef>
+        <defName>DV_Construct_ChunkGolem</defName>
+        <label>construct chunk golem</label>
+        <description>Mould a chunk golem.</description>
+        <jobString>Moulding chunk golem.</jobString>
+        <workSpeedStat>DV_GolemFormingSpeed</workSpeedStat>
+        <effectWorking>ClayTurning</effectWorking>
+        <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+        <workAmount>2200</workAmount>
+        <unfinishedThingDef>DV_UnfinishedGolem</unfinishedThingDef>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Chunk</ThingDef>
+        </descriptionHyperlinks>
+        <ingredients>
+            <li>
+                <filter>
+                    <categories>
+                        <li>StoneChunks</li>
+                    </categories>
+                </filter>
+                <count>2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Clay</li>
+                    </thingDefs>
+                </filter>
+                <count>90</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Exotic_AnimaDoll</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <categories>
+                <li>StoneChunks</li>
+            </categories>
+            <thingDefs>
+                <li>DV_Clay</li>
+                <li>DV_Exotic_AnimaDoll</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>DV_GolemancySpot</li>
+        </recipeUsers>
+        <products>
+            <DV_Golem_ChunkBase>1</DV_Golem_ChunkBase>
+        </products>
+        <skillRequirements>
+            <Crafting>8</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>DV_GolemResearch_BasicGolemancy</researchPrerequisite>
+    </RecipeDef>
+
+    <ThingDef>
+        <defName>DV_Golem_SteelBase</defName>
+        <label>steel golem</label>
+        <description>Construct a steel golem.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Steel</ThingDef>
+        </descriptionHyperlinks>
+        <thingClass>Building</thingClass>
+        <graphicData>
+            <texPath>UI/GolemIcons/UI_SteelGolem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>1200</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <comps>
+            <li Class="TabulaRasa.CompProperties_PawnSpawner">
+                <pawnKind>DV_Golem_Steel</pawnKind>
+                <newborn>true</newborn>
+            </li>
+        </comps>
+        <size>(1,1)</size>
+        <category>Building</category>
+        <pathCost>200</pathCost>
+        <passability>Standable</passability>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <hasInteractionCell>false</hasInteractionCell>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <repairEffect>Repair</repairEffect>
+        <useHitPoints>True</useHitPoints>
+        <selectable>true</selectable>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <RecipeDef>
+        <defName>DV_Construct_SteelGolem</defName>
+        <label>construct steel golem</label>
+        <description>Mould a steel golem.</description>
+        <jobString>Moulding steel golem.</jobString>
+        <workSpeedStat>DV_GolemFormingSpeed</workSpeedStat>
+        <effectWorking>ClayTurning</effectWorking>
+        <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+        <workAmount>2500</workAmount>
+        <unfinishedThingDef>DV_UnfinishedGolem</unfinishedThingDef>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Steel</ThingDef>
+        </descriptionHyperlinks>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Clay</li>
+                    </thingDefs>
+                </filter>
+                <count>75</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Exotic_AnimaDoll</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Steel</li>
+                <li>DV_Clay</li>
+                <li>DV_Exotic_AnimaDoll</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>DV_GolemancySpot</li>
+        </recipeUsers>
+        <products>
+            <DV_Golem_SteelBase>1</DV_Golem_SteelBase>
+        </products>
+        <skillRequirements>
+            <Crafting>9</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>DV_GolemResearch_AdvancedGolemancy</researchPrerequisite>
+    </RecipeDef>
+
+
+    <ThingDef>
+        <defName>DV_Golem_HayBase</defName>
+        <label>hay golem</label>
+        <description>Construct a hay golem.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Hay</ThingDef>
+        </descriptionHyperlinks>
+        <thingClass>Building</thingClass>
+        <graphicData>
+            <texPath>UI/GolemIcons/UI_HayGolem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>800</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <comps>
+            <li Class="TabulaRasa.CompProperties_PawnSpawner">
+                <pawnKind>DV_Golem_Hay</pawnKind>
+                <newborn>true</newborn>
+            </li>
+        </comps>
+        <size>(1,1)</size>
+        <category>Building</category>
+        <pathCost>200</pathCost>
+        <passability>Standable</passability>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <hasInteractionCell>false</hasInteractionCell>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <repairEffect>Repair</repairEffect>
+        <useHitPoints>True</useHitPoints>
+        <selectable>true</selectable>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <RecipeDef>
+        <defName>DV_Construct_HayGolem</defName>
+        <label>construct hay golem</label>
+        <description>Mould a hay golem.</description>
+        <jobString>Moulding hay golem.</jobString>
+        <workSpeedStat>DV_GolemFormingSpeed</workSpeedStat>
+        <effectWorking>ClayTurning</effectWorking>
+        <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+        <workAmount>2500</workAmount>
+        <unfinishedThingDef>DV_UnfinishedGolem</unfinishedThingDef>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Hay</ThingDef>
+        </descriptionHyperlinks>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Hay</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Clay</li>
+                    </thingDefs>
+                </filter>
+                <count>60</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Exotic_AnimaDoll</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Hay</li>
+                <li>DV_Clay</li>
+                <li>DV_Exotic_AnimaDoll</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>DV_GolemancySpot</li>
+        </recipeUsers>
+        <products>
+            <DV_Golem_HayBase>1</DV_Golem_HayBase>
+        </products>
+        <skillRequirements>
+            <Crafting>8</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>DV_GolemResearch_AdvancedGolemancy</researchPrerequisite>
+    </RecipeDef>
+
+    <ThingDef>
+        <defName>DV_Golem_JadeBase</defName>
+        <label>jade golem</label>
+        <description>Construct a jade golem.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Jade</ThingDef>
+        </descriptionHyperlinks>
+        <thingClass>Building</thingClass>
+        <graphicData>
+            <texPath>UI/GolemIcons/UI_JadeGolem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>800</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <comps>
+            <li Class="TabulaRasa.CompProperties_PawnSpawner">
+                <pawnKind>DV_Golem_Jade</pawnKind>
+                <newborn>true</newborn>
+            </li>
+        </comps>
+        <size>(1,1)</size>
+        <category>Building</category>
+        <pathCost>200</pathCost>
+        <passability>Standable</passability>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <hasInteractionCell>false</hasInteractionCell>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <repairEffect>Repair</repairEffect>
+        <useHitPoints>True</useHitPoints>
+        <selectable>true</selectable>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <RecipeDef>
+        <defName>DV_Construct_JadeGolem</defName>
+        <label>construct jade golem</label>
+        <description>Mould a jade golem.</description>
+        <jobString>Moulding jade golem.</jobString>
+        <workSpeedStat>DV_GolemFormingSpeed</workSpeedStat>
+        <effectWorking>ClayTurning</effectWorking>
+        <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+        <workAmount>3000</workAmount>
+        <unfinishedThingDef>DV_UnfinishedGolem</unfinishedThingDef>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Jade</ThingDef>
+        </descriptionHyperlinks>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Jade</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Clay</li>
+                    </thingDefs>
+                </filter>
+                <count>75</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Exotic_AnimaDoll</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Jade</li>
+                <li>DV_Clay</li>
+                <li>DV_Exotic_AnimaDoll</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>DV_GolemancySpot</li>
+        </recipeUsers>
+        <products>
+            <DV_Golem_JadeBase>1</DV_Golem_JadeBase>
+        </products>
+        <skillRequirements>
+            <Crafting>9</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>DV_GolemResearch_AdvancedGolemancy</researchPrerequisite>
+    </RecipeDef>
+
+    <ThingDef>
+        <defName>DV_Golem_ComponentBase</defName>
+        <label>component golem</label>
+        <description>Construct a component golem.</description>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Component</ThingDef>
+        </descriptionHyperlinks>
+        <thingClass>Building</thingClass>
+        <graphicData>
+            <texPath>UI/GolemIcons/UI_ComponentGolem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>800</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <comps>
+            <li Class="TabulaRasa.CompProperties_PawnSpawner">
+                <pawnKind>DV_Golem_Component</pawnKind>
+                <newborn>true</newborn>
+            </li>
+        </comps>
+        <size>(1,1)</size>
+        <category>Building</category>
+        <pathCost>200</pathCost>
+        <passability>Standable</passability>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <hasInteractionCell>false</hasInteractionCell>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <repairEffect>Repair</repairEffect>
+        <useHitPoints>True</useHitPoints>
+        <selectable>true</selectable>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <RecipeDef>
+        <defName>DV_Construct_ComponentGolem</defName>
+        <label>construct component golem</label>
+        <description>Mould a component golem.</description>
+        <jobString>Moulding component golem.</jobString>
+        <workSpeedStat>DV_GolemFormingSpeed</workSpeedStat>
+        <effectWorking>ClayTurning</effectWorking>
+        <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+        <workAmount>3000</workAmount>
+        <unfinishedThingDef>DV_UnfinishedGolem</unfinishedThingDef>
+        <descriptionHyperlinks>
+            <ThingDef>DV_Golem_Component</ThingDef>
+        </descriptionHyperlinks>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentIndustrial</li>
+                    </thingDefs>
+                </filter>
+                <count>8</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Clay</li>
+                    </thingDefs>
+                </filter>
+                <count>75</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Exotic_AnimaDoll</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>ComponentIndustrial</li>
+                <li>DV_Clay</li>
+                <li>DV_Exotic_AnimaDoll</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>DV_GolemancySpot</li>
+        </recipeUsers>
+        <products>
+            <DV_Golem_ComponentBase>1</DV_Golem_ComponentBase>
+        </products>
+        <skillRequirements>
+            <Crafting>10</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>DV_GolemResearch_AdvancedGolemancy</researchPrerequisite>
+    </RecipeDef>
+
+ <!-- Plate Golems - Future update! Don't snoop, or you'll spoil yourself. -->
+ 
+ <!--
+ 
+      <ThingDef>
+        <defName>DV_Golem_PlateBase</defName>
+        <label>plate golem</label>
+        <description>Construct a basic plate golem.</description>
+        <thingClass>Building</thingClass>
+        <graphicData>
+            <texPath>UI/GolemIcons/UI_PlateGolem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>850</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <comps>
+            <li Class="TabulaRasa.CompProperties_PawnSpawner">
+                <pawnKind>DV_Golem_Plate</pawnKind>
+                <newborn>true</newborn>
+            </li>
+        </comps>
+        <size>(1,1)</size>
+        <category>Building</category>
+        <pathCost>200</pathCost>
+        <passability>Standable</passability>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <hasInteractionCell>false</hasInteractionCell>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <repairEffect>Repair</repairEffect>
+        <useHitPoints>True</useHitPoints>
+        <selectable>true</selectable>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+-->
+
+<!-- 
+
+    <RecipeDef>
+        <defName>DV_Construct_PlateGolem</defName>
+        <label>construct plate golem</label>
+        <description>Forge a plate golem.</description>
+        <jobString>Forging plate golem.</jobString>
+        <workSpeedStat>DV_GolemFormingSpeed</workSpeedStat>
+        <effectWorking>Smith</effectWorking>
+        <soundWorking>Recipe_Smith</soundWorking>
+        <workAmount>1500</workAmount>
+        <unfinishedThingDef>DV_UnfinishedPlateGolem</unfinishedThingDef>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Clay</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>75</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>DV_Exotic_AnimaDoll</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>DV_Clay</li>
+                <li>Steel</li>                
+                <li>DV_Exotic_AnimaDoll</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>DV_TableGolemPress</li>
+        </recipeUsers>
+        <products>
+            <DV_Golem_PlateBase>1</DV_Golem_PlateBase>
+        </products>
+        <skillRequirements>
+            <Crafting>10</Crafting>
+        </skillRequirements>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>DV_GolemResearch_GolemMetallurgy</researchPrerequisite>
+    </RecipeDef>
+ 
+-->
+
+</Defs>

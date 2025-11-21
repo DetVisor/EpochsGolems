@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DV_AnimaLog</defName>
+    <label>anima log</label>
+    <description>A strange, deformed wood covered in natural markings and symbols. The grooves attract and house psychically active microorganisms.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimaLog</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Wood_Drop</soundInteract>
+    <soundDrop>Wood_Drop</soundDrop>
+    <statBases>
+      <MarketValue>12</MarketValue>
+      <Mass>0.4</Mass>
+    </statBases>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>false</smeltable>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<RecipeDef>
+    <defName>Make_Clay</defName>
+    <label>make clay from chunks</label>
+    <description>Break and form workable clay with chunks of stone.</description>
+    <jobString>Making clay.</jobString>
+    <workAmount>800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Sculpt</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <recipeUsers>
+       <li>TableStonecutter</li>
+       <li>CraftingSpot</li>
+    </recipeUsers>
+    <ingredients>
+        <li>
+          <filter>
+            <categories>
+              <li>StoneChunks</li>
+            </categories>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+      <fixedIngredientFilter>
+        <categories>
+          <li>StoneChunks</li>
+        </categories>
+      </fixedIngredientFilter>
+    <workSkill>Crafting</workSkill>
+    <products>
+      <DV_Clay>40</DV_Clay>
+    </products>
+    <displayPriority>1430</displayPriority>
+  </RecipeDef>
+
+</Defs>

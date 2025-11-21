@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase" Name="DV_GolemancyLinkable" Abstract="True">
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <canOverlapZones>false</canOverlapZones>
+        <pathCost>42</pathCost>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <researchPrerequisites>
+            <li>DV_GolemResearch_GolemancyGear</li>
+        </researchPrerequisites>
+        <designationCategory>Misc</designationCategory>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingCategories>
+            <li>BuildingsMisc</li>
+        </thingCategories>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers>
+    </ThingDef>
+
+    <ThingDef ParentName="DV_GolemancyLinkable">
+        <defName>DV_GolemancyChalkboard</defName>
+        <label>golemancy board</label>
+        <description>A chalkboard for writing information and instructions on crafting golems.</description>
+        <graphicData>
+            <texPath>Things/Building/Production/Linkables/GolemChalkboard</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(3,3)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <uiIconScale>0.5</uiIconScale>
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToBuild>1500</WorkToBuild>
+            <MarketValue>100</MarketValue>
+            <Mass>10</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <size>(1,1)</size>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Stony</li>
+            <li>Woody</li>
+        </stuffCategories>
+        <costStuffCount>50</costStuffCount>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <comps>
+            <li Class="CompProperties_Facility">
+                <statOffsets>
+                    <WorkTableWorkSpeedFactor>0.12</WorkTableWorkSpeedFactor>
+                </statOffsets>
+                <maxSimultaneous>2</maxSimultaneous>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>
